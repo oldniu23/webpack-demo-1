@@ -4,15 +4,17 @@ var path = require("path");
 
 module.exports = {
   mode: "development",
+  devtool: "inline-source-map",
+  devServer: {
+    contentBase: "./dist",
+  },
   entry: "./src/index.js",
   output: {
-    // path: path.resolve(__dirname, "dist"),
     filename: "index.[contenthash].js",
   },
   plugins: [
     new HtmlWebpackPlugin({
       title: "二哥",
-      // filename: "assets/admin.html",
       template: "src/assets/index.html",
     }),
   ],
